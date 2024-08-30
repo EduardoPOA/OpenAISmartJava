@@ -16,3 +16,7 @@ This plugin allows developers to easily generate code using OpenAI's GPT-3 techn
 - Activation through resource context menu or shortcut 
 - Choose from multiple models, with text-davinci-003 as the default
 - Set the maximum number of tokens to use for each code generation request, with a default of 2000
+
+## IDE for maintenance
+
+- You should only use Eclipse IDE for RCP and RAP Developers to edit this plugin.
