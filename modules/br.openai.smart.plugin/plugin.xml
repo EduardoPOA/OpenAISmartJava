@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    <extension point="org.eclipse.ui.commands">
+        <command
+             name="Gerar testes unitários (selecionando método)"
+             id="br.openai.smart.plugin.commands.generateUnitTest">
+        </command>  
+        <command
+             name="Validador de código (selecionando método)"
+             id="br.openai.smart.plugin.commands.generateFindBug">
+        </command>  
+        <command
+             name="Inserir Javadoc (selecionando método)"
+             id="br.openai.smart.plugin.commands.generateJavadoc">
+        </command>
+         <command
+             name="Explicação sobre o método (selecionando método)"
+             id="br.openai.smart.plugin.commands.generateExplanation">
+        </command>         
+        <command
+             name="Gerar código de frase comentada (selecionando comentário)"
+             id="br.openai.smart.plugin.commands.generateCode">
+        </command>        
+         <command
+             name="Update ApiKey"
+             id="br.openai.smart.plugin.commands.updateKey">
+        </command>
+    </extension>
+   <extension point="org.eclipse.ui.handlers">  
+       <handler
+            commandId="br.openai.smart.plugin.commands.generateUnitTest"
+            class="br.openai.smart.plugin.handlers.CreateUnitTest">
+      </handler> 
+      <handler
+            commandId="br.openai.smart.plugin.commands.generateFindBug"
+            class="br.openai.smart.plugin.handlers.FindBug">
+      </handler>  
+       <handler
+            commandId="br.openai.smart.plugin.commands.generateJavadoc"
+            class="br.openai.smart.plugin.handlers.CreateJavadoc">
+      </handler>
+      <handler
+            commandId="br.openai.smart.plugin.commands.generateExplanation"
+            class="br.openai.smart.plugin.handlers.Explanation">
+      </handler>     
+        <handler
+            commandId="br.openai.smart.plugin.commands.generateCode"
+            class="br.openai.smart.plugin.handlers.AskAnything">
+      </handler>
+      <handler
+            commandId="br.openai.smart.plugin.commands.updateKey"
+            class="br.openai.smart.plugin.handlers.UpdateApiKeyAction">
+      </handler>
+   </extension>
+    <extension
+         point="org.eclipse.ui.bindings"> 
+       <key
+            commandId="br.openai.smart.plugin.commands.generateUnitTest"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="ALT+1">
+      </key> 
+       <key
+            commandId="br.openai.smart.plugin.commands.generateFindBug"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="ALT+2">
+      </key>   
+        <key
+            commandId="br.openai.smart.plugin.commands.generateJavadoc"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="ALT+3">
+      </key>
+       <key
+            commandId="br.openai.smart.plugin.commands.generateExplanation"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="ALT+4">
+      </key>     
+        <key
+            commandId="br.openai.smart.plugin.commands.generateCode"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="ALT+5">
+      </key>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+       <menu
+               label="OpenAI Smart Test"
+               mnemonic="OpenAI Smart Test"
+               id="org.eclipse.ui.examples.contributions.menus.globalMenu">   
+        <command
+              icon="icons/addTests.png"
+              commandId="br.openai.smart.plugin.commands.generateUnitTest"
+              id="br.openai.smart.plugin.handlers.CreateUnitTest">
+        </command>  
+        <command
+              icon="icons/findBugs.png"
+              commandId="br.openai.smart.plugin.commands.generateFindBug"
+              id="br.openai.smart.plugin.handlers.FindBug">
+        </command>    
+         <command
+              icon="icons/addJavadoc.png"
+              commandId="br.openai.smart.plugin.commands.generateJavadoc"
+              id="br.openai.smart.plugin.handlers.CreateJavadoc">
+        </command>
+          <command
+              icon="icons/addComments.png"
+              commandId="br.openai.smart.plugin.commands.generateExplanation"
+              id="br.openai.smart.plugin.handlers.Explanation">
+        </command>
+         <command
+              icon="icons/askAnything.png"
+              commandId="br.openai.smart.plugin.commands.generateCode"
+              id="br.openai.smart.plugin.handlers.OpenAiGenerateCodeAction">
+        </command>
+       </menu>
+      </menuContribution>
+   </extension>
+   
+	<extension point="org.eclipse.ui.preferencePages">
+	  <page
+	    class="br.openai.smart.plugin.preference.OpenAiPreferencePage"
+	    id="br.openai.smart.plugin.preference.openai"
+	    name="OpenAISmartTest"
+	    after="org.eclipse.wst.xml.ui.preferences.XMLPreferencePage">
+	  </page>
+	</extension>
+	
+	<extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="br.openai.smart.plugin.Activator">
+      </startup>
+   </extension>
+</plugin>

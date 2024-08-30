@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.openai</groupId>
+	<artifactId>OpenAISmartTest</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>br.openai.smart.plugin</name>
+	<description>Codificando com OpenAI ChatGPT  </description>
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<release>17</release>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.theokanning.openai-gpt3-java/client -->
+		<dependency>
+			<groupId>com.theokanning.openai-gpt3-java</groupId>
+			<artifactId>client</artifactId>
+			<version>0.12.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.clojure/clojure -->
+		<dependency>
+			<groupId>org.clojure</groupId>
+			<artifactId>clojure</artifactId>
+			<version>1.8.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.15</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.eclipse.core.runtime/compatibility -->
+        <dependency>
+            <groupId>org.eclipse.core.runtime</groupId>
+            <artifactId>compatibility</artifactId>
+            <version>3.1.200-v20070502</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.core/org.eclipse.core.resources -->
+        <dependency>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>org.eclipse.core.resources</artifactId>
+            <version>3.7.100</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.ui.workbench -->
+        <dependency>
+            <groupId>org.eclipse.platform</groupId>
+            <artifactId>org.eclipse.ui.workbench</artifactId>
+            <version>3.129.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.ui.workbench.texteditor -->
+        <dependency>
+            <groupId>org.eclipse.platform</groupId>
+            <artifactId>org.eclipse.ui.workbench.texteditor</artifactId>
+            <version>3.17.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.swt/org.eclipse.swt.gtk.linux.x86_64 -->
+        <dependency>
+            <groupId>org.eclipse.swt</groupId>
+            <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
+            <version>4.3</version>
+            <scope>provided</scope>
+        </dependency>
+	</dependencies>
+</project>
